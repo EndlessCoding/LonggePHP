@@ -52,5 +52,25 @@ function dump($var, $echo=true, $label=null, $strict=true) {
 
 function __autoload($var)
 {
-	require_once APP_PATH . 'Model/' . $var . '.class.php';
+	//require_once APP_PATH . 'Model/' . $var . '.class.php';
+}
+
+function v($key = null, $value = null)
+{
+    static $_conf = array();
+    if($value == null){
+        if(is_array($key)){
+            $_conf = array_merge($_conf, $key);
+            return;
+        }elseif(is_string($key)){
+            return isset($_conf[$key]) ? $_conf[$key] : null;
+        }
+    }elseif($key != null && $value != null){
+        if(is_string($key) && is_string($value)){
+            $_conf[$key] = $value;
+            return true;
+        }
+    }else{
+        return null;
+    }
 }
