@@ -1,10 +1,15 @@
 <?php
 if(!defined('LONGGE_PATH'))exit();
 return array(
-        'URL_MODEL' => 1,
-        'URL_DELIMITER' => '/',
-        'DEFAULT_ACTION' => 'index',
-        'URL_REWRITE' => 1,
-        'URL_ROUTER_ON' => true,
-        //'URL_HTML_SUFFIX'=>'.html'
+
+        //模板引擎 Smarty-3.1.14
+        'Template_Engine_cache'	=> false,
+        'Left_Delimiter'		=> '{=',
+        'Right_Delimiter'		=> '=}',
+
+        //模板
+        'Default_Tpl'			=> 'default',
+
+        //调试
+        'Debug'					=> false,
 );
