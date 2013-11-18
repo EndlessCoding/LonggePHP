@@ -1,16 +1,16 @@
 <?php
 
-require_once LONGGE_PATH. 'Core/Dispatcher.class.php';
-require_once LONGGE_PATH .'Core/Template.class.php';
+require_once LONGGE_PATH . 'Core/Dispatcher.class.php';
+require_once LONGGE_PATH . 'Core/Template.class.php';
 require_once LONGGE_PATH . 'Core/Action.class.php';
 require_once LONGGE_PATH . 'Common/Common.php';
 
 header('Content-Type:text/html; charset=utf-8');
 
+
+defined('APP_PATH') or define('APP_PATH', dirname($_SERVER['SCRIPT_FILENAME']).'/');
 //if(!defined(APP_PATH))
 	//define('APP_PATH',str_replace('\\','/', dirname(dirname(__FILE__))));
-
-$dispatcher = Dispatcher::getInstance();
 
 //系统配置文件
 $option = require LONGGE_PATH . 'Conf/Conf.php';
@@ -20,10 +20,11 @@ $app_option = require APP_PATH . 'Conf/Conf.php';
 
 $option = array_merge($option, $app_option);
 
+v($option);
+
 //自定义泛路由
 //$router = array('space'=>array('Space', 'index','uid'));
 
-$dispatcher->setOption($option);
 //$dispatcher->setRoute($router);
 
 
@@ -80,9 +81,9 @@ function create_app_dir()
 
 }
 
-Template::setU($dispatcher);
-Template::setReal(true);
-Template::setTemplateDir(APP_PATH . 'Tpl/default');
-Template::setTmpDir(APP_PATH . 'Runtime/');
+// Template::setU($dispatcher);
+// Template::setReal(true);
+// Template::setTemplateDir(APP_PATH . 'Tpl/default');
+// Template::setTmpDir(APP_PATH . 'Runtime/');
 
-$dispatcher->run();
+Dispatcher::dispatch(APP_PATH);
