@@ -1,4 +1,11 @@
 <?php
+/**
+ * LonggePHP 路由调度器
+ * @package  Core
+ * @author   chenlong <1025194094@qq.com>
+ * @version  $Id$
+ */
+
 class Dispatcher {
 
     protected static $_controller = 'Index';

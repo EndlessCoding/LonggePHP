@@ -1,4 +1,11 @@
 <?php
+/**
+ * LonggePHP 模板类
+ * @package  Core
+ * @author   chenlong <1025194094@qq.com>
+ * @version  $Id$
+ */
+
 class Template {
     
     //private $_tpl_engine = '';

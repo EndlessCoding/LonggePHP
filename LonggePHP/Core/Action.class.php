@@ -1,4 +1,11 @@
 <?php
+/**
+ * LonggePHP Action控制器基类 抽象类
+ * @package  Core
+ * @author   chenlong <1025194094@qq.com>
+ * @version  $Id$
+ * @abstract
+ */
 
 abstract class Action{
 
