@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * LonggePHP Action控制器基类 抽象类
  * @package  Core

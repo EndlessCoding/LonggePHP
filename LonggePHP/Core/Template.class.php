@@ -16,6 +16,9 @@ class Template {
         $this->_smarty = $this->getSmarty();
     }
     
+    /**
+     * 获取Smarty对象实例
+     */
     private function getSmarty()
     {
         if($this->_smarty == null){

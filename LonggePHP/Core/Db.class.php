@@ -8,4 +8,5 @@
 
 abstract class Db{
 
+	private $_db = null;
 }
